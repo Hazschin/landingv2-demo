@@ -1,0 +1,177 @@
+{
+  "artista": {
+    "nombre": "Mariana Zepeda",
+    "titulo": "Artista Visual",
+    "ciudad": "Guadalajara",
+    "pais": "México",
+    "periodo": "2002 — 2026"
+  },
+
+  "nav": {
+    "links": [
+      { "texto": "Sobre mí",       "href": "#sobre" },
+      { "texto": "Declaración",    "href": "#statement" },
+      { "texto": "Obra",           "href": "#obra" },
+      { "texto": "Trayectoria",    "href": "#cv" },
+      { "texto": "Contacto",       "href": "#contacto" }
+    ]
+  },
+
+  "hero": {
+    "etiqueta": "Artista Visual · Guadalajara",
+    "tagline": "Memoria, tierra y gesto. Pintura desde el archivo íntimo de lo que se hereda sin palabras.",
+    "imagen": {
+      "src": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80",
+      "alt": "Retrato de la artista en su taller",
+      "caption": "Taller · Colonia Americana · 2025"
+    }
+  },
+
+  "sobre": {
+    "imagen": {
+      "src": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80",
+      "alt": "Mariana Zepeda en su estudio"
+    },
+    "bio": [
+      "Nací en Guadalajara en 1994. Pinto desde los ocho años, aunque sólo empecé a nombrarlo así mucho después.",
+      "Estudié Artes Plásticas en la Universidad de Guadalajara y me formé también en los talleres libres del ex Convento del Carmen. Durante varios años trabajé como restauradora en un pequeño estudio del centro, una práctica que me enseñó a mirar las capas del tiempo en la superficie de las cosas.",
+      "Mi trabajo se mueve entre el óleo sobre lino, el carbón y la tela encontrada. Mantengo un taller activo en la Colonia Americana desde 2021, donde también imparto clases particulares y recibo visitas con cita previa.",
+      "He expuesto individual y colectivamente en Jalisco, Ciudad de México y Oaxaca."
+    ]
+  },
+
+  "declaracion": {
+    "cita": "Pinto lo que no se dice en la mesa. Las cosas pequeñas que sostuvieron a las mujeres de mi familia antes de que yo supiera sus nombres.",
+    "foto": {
+      "src": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80",
+      "alt": "Mariana Zepeda"
+    },
+    "parrafos": [
+      "Mi obra gira en torno a la memoria doméstica y a los objetos que habitan el silencio de las casas. Cucharas, patios vacíos, ventanas cerradas, manteles con dobleces antiguos: me interesa el gesto minúsculo que guarda una herencia entera.",
+      "Trabajo por capas. Construyo y borro la imagen hasta que aparece algo que no había planeado. La pintura, para mí, es un lugar de escucha más que de afirmación. No busco representar; busco quedarme un rato en el umbral donde las cosas todavía dudan.",
+      "Me interesan las pintoras mexicanas del siglo XX que trabajaron el interior doméstico sin romantizarlo: María Izquierdo, Olga Costa, Elvira Gascón. También el silencio de Morandi y la luz lateral de Vermeer. De todas ellas aprendo que la intimidad no es un espacio pequeño, sino una forma de mirar."
+    ]
+  },
+
+  "obras": [
+    {
+      "titulo": "El patio de octubre",
+      "tecnica": "Óleo sobre lino",
+      "dimensiones": "100 × 80 cm",
+      "año": 2025,
+      "precio": "$28,000 MXN",
+      "vendida": false,
+      "descripcion": "Pintado en el último octubre que pasé en la casa familiar antes de que la vendieran. El patio tiene esa luz de la tarde que no vuelve. Quise quedarme ahí un rato más, con el olor a tierra mojada y las sombras largas sobre el adobe.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1579541814924-49fef17c5be5?w=700&q=80",
+        "alt": "El patio de octubre"
+      }
+    },
+    {
+      "titulo": "Cuchara de abuela",
+      "tecnica": "Óleo y carbón sobre tela",
+      "dimensiones": "50 × 40 cm",
+      "año": 2024,
+      "precio": "$12,000 MXN",
+      "vendida": false,
+      "descripcion": "La cuchara de mi abuela Consuelo. La usó toda su vida y nunca la tiré. Tiene una marca en el mango donde el metal se dobló una vez y quedó así. Pintar este objeto fue un acto de reconocimiento tardío: lo que se hereda sin decirse.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=700&q=80",
+        "alt": "Cuchara de abuela"
+      }
+    },
+    {
+      "titulo": "Ventana en calma",
+      "tecnica": "Técnica mixta sobre madera",
+      "dimensiones": "60 × 60 cm",
+      "año": 2024,
+      "precio": "$15,000 MXN",
+      "vendida": false,
+      "descripcion": "Una ventana de mi taller en un martes sin nada especial. Me interesó esa calma que no es paz sino suspensión. La luz entra de lado, como siempre, y todo parece estar esperando que ocurra algo que nunca ocurre.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=700&q=80",
+        "alt": "Ventana en calma"
+      }
+    },
+    {
+      "titulo": "Retrato a medio hacer",
+      "tecnica": "Óleo sobre tela",
+      "dimensiones": "90 × 70 cm",
+      "año": 2023,
+      "precio": "$22,000 MXN",
+      "vendida": false,
+      "descripcion": "Empecé este retrato sin modelo. Fui construyendo un rostro con capas de óleo hasta que empezó a parecerse a alguien que reconocía pero no podía nombrar. Lo dejé a la mitad porque completarlo hubiera sido mentir.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=700&q=80",
+        "alt": "Retrato a medio hacer"
+      }
+    },
+    {
+      "titulo": "Domingo",
+      "tecnica": "Óleo sobre lino",
+      "dimensiones": "70 × 100 cm",
+      "año": 2025,
+      "precio": "$24,000 MXN",
+      "vendida": false,
+      "descripcion": "Los domingos de infancia tenían una textura particular: lenta, densa, sin propósito. Esta pintura intenta capturar esa sensación de tiempo que no avanza, de cuerpos quietos en una casa que huele a comida y a silencio al mismo tiempo.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=700&q=80",
+        "alt": "Domingo"
+      }
+    },
+    {
+      "titulo": "Hilo rojo",
+      "tecnica": "Técnica mixta",
+      "dimensiones": "40 × 40 cm",
+      "año": 2024,
+      "precio": "$8,000 MXN",
+      "vendida": false,
+      "descripcion": "Un hilo rojo que encontré en el cajón de mi madre. No sé para qué lo guardaba. Hay objetos que no tienen explicación y por eso guardan tanto. Este es uno de ellos: pequeño, rojo, tenso, como si todavía estuviera unido a algo.",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=700&q=80",
+        "alt": "Hilo rojo"
+      }
+    }
+  ],
+
+  "cv": {
+    "exposiciones_individuales": [
+      { "año": 2025, "titulo": "Casas sin llave",   "lugar": "Galería Libertad · Guadalajara, Jalisco" },
+      { "año": 2023, "titulo": "El patio interior", "lugar": "Casa Escondida · Tlaquepaque, Jalisco" }
+    ],
+    "exposiciones_colectivas": [
+      { "año": 2024, "titulo": "Nuevas Voces",           "lugar": "Centro Cultural Chapultepec · Guadalajara" },
+      { "año": 2024, "titulo": "Arte emergente Jalisco", "lugar": "Museo Raúl Anguiano · Guadalajara" },
+      { "año": 2022, "titulo": "Herederas",              "lugar": "Museo de la Ciudad · Guadalajara" },
+      { "año": 2021, "titulo": "Pintura joven",          "lugar": "Galería Jorge Martínez, UdeG · Guadalajara" }
+    ],
+    "reconocimientos": [
+      { "año": 2023, "titulo": "Finalista — Premio de Pintura Joven Jalisco", "institucion": "Secretaría de Cultura de Jalisco" },
+      { "año": 2022, "titulo": "Mención honorífica — Bienal Universitaria",   "institucion": "Universidad de Guadalajara" }
+    ],
+    "formacion": [
+      { "periodo": "2016 – 2021", "titulo": "Licenciatura en Artes Plásticas",    "institucion": "Universidad de Guadalajara" },
+      { "periodo": "2019",        "titulo": "Taller de retrato contemporáneo",     "institucion": "Ex Convento del Carmen · con José Fors" }
+    ]
+  },
+
+  "contacto": {
+    "pretitulo": "¿Quieres ver una obra en persona?",
+    "llamada": "Escríbeme. Las visitas al taller son con cita.",
+    "email": "mariana@marianazepeda.mx",
+    "redes": [
+      { "nombre": "Instagram", "href": "#", "texto": "@marianazepeda" },
+      { "nombre": "WhatsApp",  "href": "#", "texto": "+52 33 0000 0000" },
+      { "nombre": "Behance",   "href": "#", "texto": "marianazepeda" }
+    ],
+    "meta": [
+      { "label": "Taller",  "texto": "Colonia Americana · Guadalajara" },
+      { "label": "Visitas", "texto": "Con cita previa" }
+    ]
+  },
+
+  "footer": {
+    "copyright": "© 2026 Mariana Zepeda · Todos los derechos reservados",
+    "ubicacion": "Guadalajara · Jalisco · México"
+  }
+}

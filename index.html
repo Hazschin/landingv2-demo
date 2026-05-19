@@ -1583,6 +1583,7 @@ async function getInfo() {
     "nav": {
       "links": [
         { "texto": "Sobre mí",    "href": "#sobre" },
+        { "texto": "Declaración", "href": "#statement" },
         { "texto": "Obra",        "href": "#obra" },
         { "texto": "Trayectoria", "href": "#trayectoria" },
         { "texto": "Contacto",    "href": "#contacto" }
@@ -1590,6 +1591,7 @@ async function getInfo() {
     },
     "hero": {
       "etiqueta": "Pintura al óleo · Figurativo contemporáneo",
+      "tagline": "Luz, forma y tiempo. Óleo sobre lino desde el taller de Tlaquepaque.",
       "imagen": {
         "src": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1600&q=80&auto=format",
         "alt": "Pintura al óleo de Andrés Lascuráin",
@@ -1612,7 +1614,12 @@ async function getInfo() {
       "foto": {
         "src": "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=900&q=80&auto=format",
         "alt": "Andrés Lascuráin"
-      }
+      },
+      "parrafos": [
+        "Mi trabajo parte del retrato y llega siempre a la luz. No me interesa fijar a las personas: me interesa lo que dejan en el espacio cuando se mueven.",
+        "Pinto en capas. Cada sesión borra algo de la anterior y deja ver algo nuevo. Lo que queda es una suma de tardes, no una decisión única.",
+        "Aprendo de los pintores que confiaron en la observación directa: Corot, Sorolla, Balthus. De todos ellos me quedo con la paciencia — la idea de que la imagen aparece cuando se le da tiempo."
+      ]
     },
     "obras": [
       {
@@ -1893,7 +1900,8 @@ async function getInfo() {
       ]
     },
     "footer": {
-      "copyright": "© 2026 — Andrés Lascuráin"
+      "copyright": "© 2026 — Andrés Lascuráin",
+      "ubicacion": "Tlaquepaque · Jalisco · México"
     }
   };
 }
@@ -2457,7 +2465,7 @@ async function renderFromInfo() {
   const footEl = document.querySelector('.foot');
   if (footEl) footEl.innerHTML = `
     <div>${data.footer.copyright}</div>
-    <div>Hecho por <span class="esa">El Salón del Arte</span></div>`;
+    <div>Hecho por <span class="esa">Hazschin</span></div>`;
 
   // Revelar la página solo cuando el contenido ya está listo
   document.body.style.visibility = '';
