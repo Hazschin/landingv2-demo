@@ -1,0 +1,2585 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Andrés Lascuráin — Pintura al óleo</title>
+<meta name="description" content="Pintura al óleo figurativa. Obra disponible y contacto directo." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ================================================================
+   ESA · Landing artista — sistema base
+   Mobile-first. Editorial, cálido, papel + tinta.
+   ================================================================ */
+
+/* ---- TYPE COMBOS ---- */
+/* A · Editorial (default): Instrument Serif + Manrope */
+/* B · Neutra: Geist (sans only) */
+/* C · Mixto: Bricolage Grotesque display + Newsreader body */
+
+:root {
+  /* paleta Tierra (default) */
+  --paper: #f1ebe0;
+  --paper-2: #ebe3d3;
+  --ink: #1a1612;
+  --ink-soft: #5a4f44;
+  --rule: #cdc2b0;
+  --accent: #8a3b1c;
+  --accent-ink: #faf7f1;
+  --signal-ok: #5e6b3a;
+  --signal-stop: #8a3b1c;
+
+  /* type */
+  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", "Söhne", -apple-system, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --display-italic-style: italic;
+}
+
+[data-palette="galeria"] {
+  --paper: #f7f5ef;
+  --paper-2: #eeeae0;
+  --ink: #14130f;
+  --ink-soft: #4f4b41;
+  --rule: #d6d0c2;
+  --accent: #3f3a78;
+  --accent-ink: #f7f5ef;
+  --signal-ok: #3f3a78;
+  --signal-stop: #6e2a2a;
+}
+
+[data-palette="atelier"] {
+  --paper: #ebe5d8;
+  --paper-2: #e0d8c4;
+  --ink: #1f1a14;
+  --ink-soft: #61554a;
+  --rule: #c3b69f;
+  --accent: #b8401d;
+  --accent-ink: #f6f0e2;
+  --signal-ok: #4a6b3a;
+  --signal-stop: #b8401d;
+}
+
+[data-palette="monocromo"] {
+  --paper: #ededeb;
+  --paper-2: #dededb;
+  --ink: #121211;
+  --ink-soft: #5a5a55;
+  --rule: #c6c6c0;
+  --accent: #121211;
+  --accent-ink: #ededeb;
+  --signal-ok: #4a4a44;
+  --signal-stop: #6b2c1f;
+}
+
+[data-theme="dark"] {
+  --paper: #161312;
+  --paper-2: #1f1a17;
+  --ink: #efe7d8;
+  --ink-soft: #a89d8b;
+  --rule: #3a322a;
+  --accent: #d27a4a;
+  --accent-ink: #14110f;
+}
+[data-theme="dark"][data-palette="galeria"] {
+  --paper: #100f12;
+  --paper-2: #18171c;
+  --ink: #ecead8;
+  --ink-soft: #9c9a8b;
+  --rule: #2e2c36;
+  --accent: #b9b1ff;
+}
+[data-theme="dark"][data-palette="atelier"] {
+  --paper: #15110d;
+  --paper-2: #1d1813;
+  --ink: #efe2c8;
+  --ink-soft: #aa9a7d;
+  --rule: #3a2f22;
+  --accent: #e26a3d;
+}
+[data-theme="dark"][data-palette="monocromo"] {
+  --paper: #131312;
+  --paper-2: #1b1b19;
+  --ink: #ededeb;
+  --ink-soft: #9d9d97;
+  --rule: #34342f;
+  --accent: #ededeb;
+  --accent-ink: #131312;
+}
+
+/* ---- DARK MODE · OS PREFERENCE ---- */
+/* Activa dark cuando el SO lo prefiere y el usuario no forzó light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161312;
+    --paper-2: #1f1a17;
+    --ink: #efe7d8;
+    --ink-soft: #a89d8b;
+    --rule: #3a322a;
+    --accent: #d27a4a;
+    --accent-ink: #14110f;
+  }
+  :root:not([data-theme="light"])[data-palette="galeria"] {
+    --paper: #100f12;
+    --paper-2: #18171c;
+    --ink: #ecead8;
+    --ink-soft: #9c9a8b;
+    --rule: #2e2c36;
+    --accent: #b9b1ff;
+  }
+  :root:not([data-theme="light"])[data-palette="atelier"] {
+    --paper: #15110d;
+    --paper-2: #1d1813;
+    --ink: #efe2c8;
+    --ink-soft: #aa9a7d;
+    --rule: #3a2f22;
+    --accent: #e26a3d;
+  }
+  :root:not([data-theme="light"])[data-palette="monocromo"] {
+    --paper: #131312;
+    --paper-2: #1b1b19;
+    --ink: #ededeb;
+    --ink-soft: #9d9d97;
+    --rule: #34342f;
+    --accent: #ededeb;
+    --accent-ink: #131312;
+  }
+}
+
+[data-type="neutra"] {
+  --font-display: "Geist", -apple-system, system-ui, sans-serif;
+  --font-body: "Geist", -apple-system, system-ui, sans-serif;
+  --display-italic-style: normal;
+}
+[data-type="mixto"] {
+  --font-display: "Bricolage Grotesque", -apple-system, sans-serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --display-italic-style: normal;
+}
+
+/* ---- RESET ---- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { background: var(--paper); color: var(--ink); }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .35s ease, color .35s ease;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+
+/* ---- TYPE ---- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.display em, .display .it { font-style: var(--display-italic-style); }
+[data-type="neutra"] .display { letter-spacing: -0.035em; font-weight: 500; }
+[data-type="mixto"] .display { letter-spacing: -0.02em; font-weight: 500; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.eyebrow .num { color: var(--ink); }
+
+.lede {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+}
+
+/* ---- LAYOUT ---- */
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 768px) { .wrap { padding: 0 40px; } }
+@media (min-width: 1100px) { .wrap { padding: 0 56px; } }
+
+.section {
+  padding: 72px 0 40px;
+}
+@media (min-width: 768px) {
+  .section { padding: 112px 0 56px; }
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin-bottom: 28px;
+}
+.section-head .title {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: clamp(28px, 7vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+[data-type="neutra"] .section-head .title { font-style: normal; font-weight: 500; letter-spacing: -0.035em; }
+
+/* ---- NAV ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 60%, transparent);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-mark {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+[data-type="neutra"] .nav-mark { font-style: normal; font-weight: 600; letter-spacing: -0.03em; }
+.nav-links {
+  display: none;
+  gap: 22px;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--ink-soft);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (min-width: 768px) {
+  .nav-links { display: flex; }
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.theme-toggle:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); color: var(--ink); }
+.theme-toggle svg { width: 15px; height: 15px; pointer-events: none; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 56px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--paper-2);
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(0.95) contrast(1.02);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, #000 35%, transparent) 0%,
+      color-mix(in srgb, #000 15%, transparent) 30%,
+      color-mix(in srgb, #000 30%, transparent) 60%,
+      color-mix(in srgb, #000 78%, transparent) 92%,
+      #000 100%);
+}
+.hero-meta {
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  color: rgba(246, 238, 222, 0.85);
+}
+.hero .hero-corner { color: inherit; }
+.hero .hero-corner .pin { background: var(--accent); }
+.hero-body {
+  padding: 24px 20px 28px;
+}
+@media (min-width: 768px) {
+  .hero-meta { padding: 28px 40px 0; }
+  .hero-body { padding: 28px 40px 40px; }
+}
+@media (min-width: 1100px) {
+  .hero-meta { padding: 32px 56px 0; }
+  .hero-body { padding: 32px 56px 56px; }
+}
+.hero-name {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: clamp(56px, 18vw, 168px);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  color: #f6eede;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 24px rgba(0,0,0,0.18);
+}
+[data-type="neutra"] .hero-name { font-style: normal; font-weight: 500; letter-spacing: -0.05em; }
+[data-type="mixto"] .hero-name { font-weight: 500; letter-spacing: -0.04em; }
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(246, 238, 222, 0.82);
+  margin-bottom: 24px;
+}
+.hero-tag .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(246, 238, 222, 0.6);
+  display: inline-block;
+}
+
+/* hero CTAs over the dark image */
+.hero .btn-primary { background: #f6eede; color: #14110f; }
+.hero .btn-primary:hover { background: var(--accent); color: var(--accent-ink); }
+.hero .btn-ghost {
+  border-color: rgba(246, 238, 222, 0.55);
+  color: #f6eede;
+}
+.hero .btn-ghost:hover { background: #f6eede; color: #14110f; }
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform .15s ease, background .2s, border-color .2s, color .2s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--accent); color: var(--accent-ink); }
+.btn-ghost {
+  border-color: color-mix(in srgb, var(--ink) 40%, transparent);
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.btn-accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn .arrow { width: 14px; height: 14px; }
+
+/* hero corner detail */
+.hero-corner {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.hero-corner .pin {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+/* ---- ABOUT ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.about-photo {
+  aspect-ratio: 4 / 5;
+  background: var(--paper-2);
+  overflow: hidden;
+  position: relative;
+}
+.about-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.about-caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.about-text p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.about-text p .em {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: 1.05em;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about-text { padding-top: 8px; }
+}
+
+/* ---- STATEMENT ---- */
+.statement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-bottom: 24px;
+}
+.quote {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-weight: 400;
+  font-size: clamp(28px, 7.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+[data-type="neutra"] .quote { font-style: normal; font-weight: 400; letter-spacing: -0.03em; }
+.quote .mark {
+  color: var(--accent);
+  font-style: normal;
+  display: inline-block;
+  transform: translateY(0.08em);
+  margin-right: 0.04em;
+}
+.quote-sign {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.quote-sign .rule {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+.quote-photo {
+  aspect-ratio: 1 / 1;
+  background: var(--paper-2);
+  overflow: hidden;
+}
+.quote-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (min-width: 768px) {
+  .statement {
+    grid-template-columns: 8fr 4fr;
+    gap: 56px;
+    align-items: end;
+  }
+  .quote-photo { aspect-ratio: 4 / 5; }
+}
+
+/* ---- BENTO GALLERY ---- */
+.bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .bento {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+/* === LAYOUT: ANCLA (obra grande + grid uniforme) === */
+.bento[data-layout="ancla"] {
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 14px;
+}
+.bento[data-layout="ancla"] .obra,
+.bento[data-layout="ancla"] .obra.anchor,
+.bento[data-layout="ancla"] .obra.wide,
+.bento[data-layout="ancla"] .obra.tall {
+  aspect-ratio: 4 / 5;
+  grid-column: auto;
+  grid-row: auto;
+}
+.bento[data-layout="ancla"] .obra:first-child { aspect-ratio: 5 / 6; }
+@media (min-width: 600px) {
+  .bento[data-layout="ancla"] { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .bento[data-layout="ancla"] .obra:first-child { grid-column: span 3; aspect-ratio: 16 / 9; }
+}
+@media (min-width: 1000px) {
+  .bento[data-layout="ancla"] { gap: 20px; }
+  .bento[data-layout="ancla"] .obra:first-child { aspect-ratio: 21 / 9; }
+}
+
+/* === LAYOUT: SALÓN · MURO (masonry estable — distribuido por JS) === */
+.bento[data-layout="salon"],
+.bento[data-layout="salon-cedula"] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  column-count: unset;
+  column-gap: 0;
+  gap: 14px;
+  align-items: start;
+}
+@media (min-width: 640px) {
+  .bento[data-layout="salon"],
+  .bento[data-layout="salon-cedula"] { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+@media (min-width: 1000px) {
+  .bento[data-layout="salon"],
+  .bento[data-layout="salon-cedula"] { gap: 22px; }
+}
+.salon-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+@media (min-width: 640px) { .salon-col { gap: 18px; } }
+@media (min-width: 1000px) { .salon-col { gap: 22px; } }
+
+.bento[data-layout="salon"] .obra,
+.bento[data-layout="salon-cedula"] .obra {
+  display: block;
+  break-inside: unset;
+  width: 100%;
+  margin: 0;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+/* Varied aspect-ratios — natural, no hierarchy */
+.bento[data-layout="salon"] .obra,
+.bento[data-layout="salon-cedula"] .obra .obra-img { aspect-ratio: 4 / 5; }
+.bento[data-layout="salon"] .obra:nth-child(6n+1) { aspect-ratio: 3 / 4; }
+.bento[data-layout="salon"] .obra:nth-child(6n+2) { aspect-ratio: 1 / 1; }
+.bento[data-layout="salon"] .obra:nth-child(6n+3) { aspect-ratio: 4 / 5; }
+.bento[data-layout="salon"] .obra:nth-child(6n+4) { aspect-ratio: 5 / 4; }
+.bento[data-layout="salon"] .obra:nth-child(6n+5) { aspect-ratio: 2 / 3; }
+.bento[data-layout="salon"] .obra:nth-child(6n+6) { aspect-ratio: 1 / 1; }
+
+/* Salón muro keeps overlay design — but always compact (no anchor/wide here) */
+.bento[data-layout="salon"] .obra-info { padding: 12px; gap: 5px; }
+.bento[data-layout="salon"] .obra-title { font-size: clamp(16px, 1.6vw, 20px); }
+.bento[data-layout="salon"] .obra-meta { display: none; }
+.bento[data-layout="salon"] .obra-cta .full,
+.bento[data-layout="salon"] .obra-cta .arrow { display: none; }
+.bento[data-layout="salon"] .obra-cta::after { content: "→"; font-size: 13px; line-height: 1; }
+.bento[data-layout="salon"] .obra-price { font-size: 11px; }
+
+/* === LAYOUT: SALÓN · CÉDULA (masonry + caption debajo, estilo museo) === */
+.bento[data-layout="salon-cedula"] .obra {
+  aspect-ratio: auto;
+  background: transparent;
+  overflow: visible;
+}
+.bento[data-layout="salon-cedula"] .obra-img {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  background: var(--paper-2);
+  overflow: hidden;
+}
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+1) .obra-img { aspect-ratio: 3 / 4; }
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+2) .obra-img { aspect-ratio: 1 / 1; }
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+3) .obra-img { aspect-ratio: 4 / 5; }
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+4) .obra-img { aspect-ratio: 5 / 4; }
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+5) .obra-img { aspect-ratio: 2 / 3; }
+.bento[data-layout="salon-cedula"] .obra:nth-child(6n+6) .obra-img { aspect-ratio: 1 / 1; }
+
+.bento[data-layout="salon-cedula"] .obra-shade { display: none; }
+.bento[data-layout="salon-cedula"] .obra .obra-title {
+  font-size: 17px;
+  color: var(--ink);
+  text-shadow: none;
+  font-style: var(--display-italic-style);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+[data-type="neutra"] .bento[data-layout="salon-cedula"] .obra .obra-title {
+  font-style: normal; font-weight: 500; letter-spacing: -0.03em;
+}
+.bento[data-layout="salon-cedula"] .obra .obra-info {
+  position: static;
+  padding: 12px 2px 0;
+  color: var(--ink);
+  gap: 6px;
+}
+.bento[data-layout="salon-cedula"] .obra-meta {
+  display: flex;
+  color: var(--ink-soft);
+  opacity: 1;
+}
+.bento[data-layout="salon-cedula"] .obra-bottom { margin-top: 4px; }
+.bento[data-layout="salon-cedula"] .obra-price { color: var(--ink); font-size: 12px; }
+.bento[data-layout="salon-cedula"] .obra-cta {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  font-size: 11px;
+}
+.bento[data-layout="salon-cedula"] .obra-cta::after { content: none; }
+.bento[data-layout="salon-cedula"] .obra-cta .full,
+.bento[data-layout="salon-cedula"] .obra-cta .arrow { display: inline-flex; }
+.bento[data-layout="salon-cedula"] .obra-cta:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+@media (min-width: 768px) {
+  .bento[data-layout="salon-cedula"] .obra .obra-title { font-size: 19px; }
+}
+.bento[data-layout="tira"] {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-template-columns: none;
+  grid-auto-rows: auto;
+}
+.bento[data-layout="tira"] .obra {
+  grid-column: auto;
+  grid-row: auto;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .bento[data-layout="tira"] { gap: 80px; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+1) { width: 78%; margin-left: 0; aspect-ratio: 16 / 10; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+2) { width: 48%; margin-left: auto; margin-right: 6%; aspect-ratio: 4 / 5; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+3) { width: 38%; margin-left: 12%; aspect-ratio: 3 / 4; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+4) { width: 62%; margin-left: auto; aspect-ratio: 5 / 4; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+5) { width: 42%; margin-left: 6%; aspect-ratio: 1 / 1; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+6) { width: 36%; margin-left: 56%; aspect-ratio: 3 / 4; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+7) { width: 58%; margin-left: 8%; aspect-ratio: 5 / 4; }
+  .bento[data-layout="tira"] .obra:nth-child(8n+8) { width: 46%; margin-left: auto; margin-right: 8%; aspect-ratio: 4 / 5; }
+}
+
+/* === LAYOUT: SCROLL HORIZONTAL (pasarela) === */
+.bento[data-layout="scroll"] {
+  display: flex;
+  grid-template-columns: none;
+  grid-auto-rows: auto;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+  /* bleed to viewport edges */
+  margin: 0 -20px;
+  padding: 4px 20px 28px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-soft) transparent;
+}
+.bento[data-layout="scroll"] .obra {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  grid-column: auto;
+  grid-row: auto;
+  width: 72vw;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  height: auto;
+}
+.bento[data-layout="scroll"] .obra.anchor { aspect-ratio: 3 / 4; width: 86vw; max-width: 420px; }
+.bento[data-layout="scroll"] .obra.wide   { aspect-ratio: 5 / 4; width: 86vw; max-width: 480px; }
+.bento[data-layout="scroll"] .obra.tall   { aspect-ratio: 3 / 5; }
+.bento[data-layout="scroll"]::after {
+  /* trailing breathing space */
+  content: "";
+  flex: 0 0 8px;
+}
+@media (min-width: 768px) {
+  .bento[data-layout="scroll"] {
+    margin: 0 -40px;
+    padding: 4px 40px 32px;
+    gap: 18px;
+  }
+  .bento[data-layout="scroll"] .obra { width: 360px; max-width: none; }
+  .bento[data-layout="scroll"] .obra.anchor { width: 520px; max-width: none; }
+  .bento[data-layout="scroll"] .obra.wide { width: 520px; max-width: none; }
+}
+@media (min-width: 1100px) {
+  .bento[data-layout="scroll"] { margin: 0 -56px; padding: 4px 56px 36px; }
+}
+/* small scroll affordance below the row */
+.bento[data-layout="scroll"]::-webkit-scrollbar { height: 6px; }
+.bento[data-layout="scroll"]::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--ink-soft) 60%, transparent);
+  border-radius: 999px;
+}
+
+.obra {
+  position: relative;
+  background: var(--paper-2);
+  overflow: hidden;
+  isolation: isolate;
+}
+.obra-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.obra-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .9s cubic-bezier(.2,.6,.2,1);
+}
+.obra:hover .obra-img img { transform: scale(1.035); }
+
+.obra-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 38%, color-mix(in srgb, #000 75%, transparent) 100%);
+  opacity: 0.85;
+}
+.obra-info {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  padding: 12px;
+  color: #f4ece0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.obra-title {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-weight: 400;
+  /* small-card default — anchor/wide bump this back up below */
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+[data-type="neutra"] .obra-title { font-style: normal; font-weight: 500; letter-spacing: -0.035em; }
+
+.obra-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.obra-meta .sep { opacity: 0.5; }
+
+.obra-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+.obra-price {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.obra-cta {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.95);
+  color: #14110f;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background .2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.obra-cta:hover { background: var(--accent); color: var(--accent-ink); }
+.obra-cta .arrow { width: 12px; height: 12px; }
+
+/* on small mobile cards, drop the metadata row & shorten CTA copy — BENTO ONLY */
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-meta {
+  display: none;
+}
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta .full,
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta .arrow { display: none; }
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta::after {
+  content: "→";
+  font-size: 13px;
+  line-height: 1;
+}
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-info { padding: 10px; gap: 4px; }
+.bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-price { font-size: 10.5px; }
+
+/* anchor + wide retain full meta + label on mobile — BENTO ONLY */
+.bento[data-layout="bento"] .obra.anchor .obra-title,
+.bento[data-layout="bento"] .obra.wide   .obra-title {
+  font-size: clamp(22px, 5.2vw, 30px);
+}
+
+@media (min-width: 768px) {
+  /* desktop: bring everything back to full editorial size */
+  .obra-info { padding: 16px; gap: 8px; }
+  .obra-title { font-size: clamp(22px, 2vw, 30px); }
+  .bento[data-layout="bento"] .obra.anchor .obra-title,
+  .bento[data-layout="bento"] .obra.wide   .obra-title { font-size: clamp(28px, 2.6vw, 36px); }
+  .obra-meta { font-size: 11px; gap: 8px; }
+  .obra-price { font-size: 13px; }
+  .obra-cta { font-size: 12px; padding: 9px 14px; gap: 6px; }
+  .bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-meta { display: flex; }
+  .bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta .full,
+  .bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta .arrow { display: inline-block; }
+  .bento[data-layout="bento"] .obra:not(.anchor):not(.wide) .obra-cta::after { content: none; }
+}
+
+/* sello disponible / vendida */
+.sello {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  background: rgba(244,236,224,0.94);
+  color: var(--ink);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sello .dotcir {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--signal-ok);
+}
+.sello.vendida {
+  background: transparent;
+  color: #f6ede0;
+  border: 1px solid rgba(246,237,224,0.7);
+  padding: 8px 12px;
+  font-size: 11px;
+  transform: rotate(-3deg);
+  top: 16px;
+  left: 14px;
+}
+.sello.vendida::before {
+  content: "";
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--signal-stop);
+  margin-right: 8px;
+  vertical-align: -1px;
+}
+
+/* obra heights — uniform 4/5 across grid; anchor is a featured tile */
+.obra { aspect-ratio: 4 / 5; }
+.obra.anchor { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.obra.wide   { grid-column: span 2; aspect-ratio: 5 / 4; }
+.obra.tall   { aspect-ratio: 4 / 5; }
+
+@media (max-width: 639px) {
+  /* mobile: anchor + wide also single-column, taller aspect */
+  .obra.anchor { aspect-ratio: 5 / 4; }
+  .obra.wide   { aspect-ratio: 5 / 4; grid-column: auto; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* tablet 2-col: wide takes both columns */
+  .obra.wide   { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+}
+@media (min-width: 1024px) {
+  /* desktop 3-col: anchor spans all 3, wide spans 2 of 3 */
+  .obra.anchor { aspect-ratio: 21 / 9; }
+  .obra.wide   { grid-column: span 2; aspect-ratio: 16 / 9; }
+}
+
+/* ---- OBRA MODAL ---- */
+.obra-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  background: color-mix(in srgb, #000 70%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.obra-modal[data-open="true"] {
+  display: block;
+  opacity: 1;
+}
+.obra-modal-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.obra-modal-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(244, 236, 224, 0.95);
+  color: #14110f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  transition: background .2s, transform .15s;
+}
+.obra-modal-close:hover { background: #fff; transform: scale(1.05); }
+.obra-modal-close svg { width: 18px; height: 18px; }
+
+/* prev / next navigation */
+.obra-modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(244, 236, 224, 0.92);
+  color: #14110f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  transition: background .2s, transform .15s;
+}
+.obra-modal-nav:hover { background: #fff; }
+.obra-modal-nav:active { transform: translateY(-50%) scale(0.96); }
+.obra-modal-nav svg { width: 18px; height: 18px; }
+.obra-modal-nav.prev { left: 12px; }
+.obra-modal-nav.next { right: 12px; }
+@media (min-width: 900px) {
+  .obra-modal-nav { width: 52px; height: 52px; }
+  .obra-modal-nav.prev { left: 24px; }
+  .obra-modal-nav.next { right: 24px; }
+}
+@media (min-width: 1280px) {
+  .obra-modal-nav.prev { left: 40px; }
+  .obra-modal-nav.next { right: 40px; }
+}
+
+.obra-modal-counter {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 236, 224, 0.78);
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-variant-numeric: tabular-nums;
+}
+@media (min-width: 900px) {
+  .obra-modal-counter { bottom: 24px; font-size: 12px; }
+}
+@media (min-width: 768px) {
+  .obra-modal-close { top: 24px; right: 24px; width: 48px; height: 48px; }
+}
+
+.obra-modal-frame {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  animation: modal-in .35s cubic-bezier(.2,.6,.2,1);
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (min-width: 900px) {
+  .obra-modal { padding: 32px; }
+  .obra-modal-frame {
+    grid-template-columns: 1.3fr 1fr;
+    min-height: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+.obra-modal-img {
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 60vw;
+  padding: 28px;
+}
+.obra-modal-img img {
+  width: auto;
+  height: auto;
+  max-width: 88%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+  box-shadow:
+    0 30px 60px -22px rgba(0,0,0,0.32),
+    0 10px 24px -10px rgba(0,0,0,0.18);
+}
+.obra-modal-img.ph { min-height: 100vw; padding: 0; }
+@media (min-width: 900px) {
+  .obra-modal-img { min-height: 0; padding: 56px; }
+  .obra-modal-img img {
+    max-width: 82%;
+    max-height: calc(100vh - 180px);
+  }
+}
+
+.obra-modal-info {
+  padding: 28px 22px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .obra-modal-info {
+    padding: 56px 48px;
+    overflow-y: auto;
+    max-height: calc(100vh - 64px);
+    gap: 32px;
+  }
+}
+
+.obra-modal-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.obra-modal-sello {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--rule) 40%, transparent);
+  color: var(--ink);
+  font-size: 10px;
+}
+.obra-modal-sello .dotcir {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--signal-ok);
+}
+.obra-modal-sello.vendida .dotcir { background: var(--signal-stop); }
+
+.obra-modal-title {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-weight: 400;
+  font-size: clamp(36px, 7vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+[data-type="neutra"] .obra-modal-title {
+  font-style: normal; font-weight: 500; letter-spacing: -0.035em;
+}
+
+.obra-modal-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 480px) {
+  .obra-modal-meta { grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+}
+.obra-modal-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.obra-modal-meta-row .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.obra-modal-meta-row .value {
+  font-size: 15px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.obra-modal-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.obra-modal-desc p + p { margin-top: 14px; }
+.obra-modal-desc .pull {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: 1.15em;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.obra-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.obra-modal-price {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.obra-modal-price.sold { opacity: 0.55; }
+.obra-modal-actions .btn { justify-content: space-between; padding: 16px 20px; font-size: 15px; }
+@media (min-width: 480px) {
+  .obra-modal-actions { flex-direction: row; align-items: center; flex-wrap: wrap; }
+  .obra-modal-price { flex: 1 0 100%; margin: 0 0 4px; }
+  .obra-modal-actions .btn { flex: 1; min-width: 200px; }
+}
+
+html.modal-open, body.modal-open { overflow: hidden; }
+.bento .obra { cursor: pointer; }
+
+/* Whole card is the CTA now (opens modal) — hide the redundant inline pill */
+.bento .obra .obra-cta { display: none; }
+.bento .obra .obra-bottom { justify-content: flex-start; }
+.bento .obra.archive { display: none; }
+.bento[data-archivo="open"] .obra.archive {
+  display: block;
+  animation: archive-in .55s cubic-bezier(.2,.6,.2,1) backwards;
+}
+.bento[data-archivo="open"] .obra.archive:nth-of-type(odd) { animation-delay: .03s; }
+.bento[data-archivo="open"] .obra.archive:nth-of-type(even) { animation-delay: .06s; }
+
+@keyframes archive-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.ver-mas-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .ver-mas-row { margin-top: 44px; }
+}
+.ver-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, color .25s, transform .15s;
+}
+.ver-mas:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.ver-mas:active { transform: translateY(1px); }
+.ver-mas-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.ver-mas:hover .ver-mas-count { color: color-mix(in srgb, var(--paper) 75%, transparent); }
+.ver-mas-icon {
+  display: inline-flex;
+  transition: transform .35s cubic-bezier(.2,.6,.2,1);
+}
+.ver-mas-icon svg { width: 16px; height: 16px; }
+.ver-mas[aria-expanded="true"] .ver-mas-icon { transform: rotate(180deg); }
+.cv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+.cv-block h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.cv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.cv-list li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 15px;
+  line-height: 1.4;
+  align-items: baseline;
+}
+.cv-list li:last-child { border-bottom: 1px solid var(--rule); }
+.cv-list .year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.cv-list .where {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.cv-list .title-item {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+[data-type="neutra"] .cv-list .title-item { font-style: normal; font-weight: 500; }
+
+@media (min-width: 768px) {
+  .cv {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+}
+
+/* ---- CONTACT ---- */
+.contact {
+  border-top: 1px solid var(--rule);
+  margin-top: 64px;
+  padding: 72px 0 40px;
+}
+.contact-display {
+  font-family: var(--font-display);
+  font-style: var(--display-italic-style);
+  font-weight: 400;
+  font-size: clamp(40px, 11vw, 120px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  margin-bottom: 32px;
+}
+[data-type="neutra"] .contact-display { font-style: normal; font-weight: 500; letter-spacing: -0.045em; }
+.contact-invite {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 36ch;
+  margin-bottom: 28px;
+}
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+.contact-actions .btn { justify-content: space-between; }
+.contact-actions .btn-big {
+  padding: 20px 22px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.contact-actions .btn .arrow { width: 16px; height: 16px; }
+
+.contact-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 14px;
+}
+.contact-row .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.contact-row a:hover { color: var(--accent); }
+
+@media (min-width: 768px) {
+  .contact-actions { flex-direction: row; }
+  .contact-actions .btn { flex: 1; }
+  .contact-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 56px;
+  }
+}
+
+/* ---- FOOTER ---- */
+.foot {
+  padding: 40px 0 56px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.foot .esa { color: var(--ink); }
+@media (min-width: 768px) {
+  .foot { flex-direction: row; justify-content: space-between; }
+}
+
+/* ---- IMG FALLBACK PLACEHOLDER ---- */
+.ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, var(--paper-2) 0 8px, color-mix(in srgb, var(--paper-2) 92%, var(--ink) 8%) 8px 16px);
+}
+.ph::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: auto 10px 10px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- SCROLL REVEAL ---- */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.6,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---- FONT LOAD HEDGE: keep latin features ---- */
+.display, .quote, .hero-name, .contact-display, .obra-title, .cv-list .title-item, .section-head .title, .nav-mark {
+  font-feature-settings: "ss01", "kern", "liga";
+}
+
+</style>
+
+</head>
+
+<body data-screen-label="ESA Landing — Artista" style="visibility:hidden">
+
+<!-- =========== NAV =========== -->
+<nav class="nav" data-screen-label="Nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-mark"></a>
+    <div class="nav-links"></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.4 3.4l1 1M11.6 11.6l1 1M12.6 3.4l-1 1M4.4 11.6l-1 1"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M13.5 10A6 6 0 0 1 6 2.5a.5.5 0 0 0-.6.6A6 6 0 1 0 13 10.6a.5.5 0 0 0 .5-.6z"/></svg>
+      </button>
+      <a class="nav-cta" href="#"></a>
+    </div>
+  </div>
+</nav>
+
+<!-- =========== HERO =========== -->
+<header id="top" class="hero" data-screen-label="01 Hero">
+  <div class="hero-bg">
+    <div class="img-slot" data-label="obra ancla">
+      <img src="" alt="" />
+    </div>
+  </div>
+
+  <div class="hero-meta">
+    <span class="hero-corner"><span class="pin"></span></span>
+    <span class="hero-corner"></span>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-tag"></div>
+    <h1 class="hero-name"></h1>
+
+    <div class="cta-row">
+      <a href="#obra" class="btn btn-primary">
+        Ver obra
+        <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#" class="btn btn-ghost">
+        Contactar
+        <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =========== SOBRE =========== -->
+<section id="sobre" class="section" data-screen-label="02 Sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">02</span> · Sobre mí</span>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <div class="img-slot about-photo" data-label="foto del artista">
+          <img src="" alt="" />
+        </div>
+        <div class="about-caption"></div>
+      </div>
+
+      <div class="about-text reveal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== DECLARACIÓN =========== -->
+<section class="section" data-screen-label="03 Declaración">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">03</span> · Declaración</span>
+    </div>
+
+    <div class="statement">
+      <blockquote class="quote"></blockquote>
+      <div class="img-slot quote-photo" data-label="retrato del artista">
+        <img src="" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== OBRA (BENTO) =========== -->
+<section id="obra" class="section" data-screen-label="04 Obra">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">04</span> · Obra</span>
+    </div>
+
+    <div class="bento" data-layout="salon"></div>
+
+    <!-- ===== "VER MÁS" TOGGLE ===== -->
+    <div class="ver-mas-row">
+      <button class="ver-mas" id="archivoToggle" aria-expanded="false" aria-controls="obraGrid">
+        <span class="ver-mas-label">Ver más obras</span>
+        <span class="ver-mas-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 9l6 6 6-6"/></svg>
+        </span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========== TRAYECTORIA =========== -->
+<section id="trayectoria" class="section" data-screen-label="05 Trayectoria">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">05</span> · Trayectoria</span>
+    </div>
+
+    <div class="cv"></div>
+  </div>
+</section>
+
+<!-- =========== CONTACTO =========== -->
+<section id="contacto" class="contact" data-screen-label="06 Contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">06</span> · Contacto</span>
+    </div>
+
+    <h2 class="contact-display"></h2>
+    <p class="contact-invite"></p>
+    <div class="contact-actions"></div>
+    <div class="contact-meta"></div>
+  </div>
+</section>
+
+<!-- =========== FOOT =========== -->
+<footer class="foot wrap"></footer>
+
+<!-- ============ OBRA MODAL ============ -->
+<div class="obra-modal" id="obraModal" role="dialog" aria-modal="true" aria-labelledby="obraModalTitle" hidden>
+  <div class="obra-modal-scrim" data-close></div>
+  <button class="obra-modal-close" aria-label="Cerrar" data-close>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <button class="obra-modal-nav prev" id="obraModalPrev" aria-label="Obra anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <button class="obra-modal-nav next" id="obraModalNext" aria-label="Obra siguiente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+
+  <span class="obra-modal-counter" id="obraModalCounter">1 / 24</span>
+  <div class="obra-modal-frame">
+    <div class="obra-modal-img" id="obraModalImg"></div>
+    <div class="obra-modal-info">
+      <div class="obra-modal-eyebrow">
+        <span id="obraModalYear">2024</span>
+        <span id="obraModalSelloWrap"></span>
+      </div>
+      <h2 class="obra-modal-title" id="obraModalTitle"><em>—</em></h2>
+      <div class="obra-modal-meta">
+        <div class="obra-modal-meta-row">
+          <span class="label">Técnica</span>
+          <span class="value" id="obraModalTech">—</span>
+        </div>
+        <div class="obra-modal-meta-row">
+          <span class="label">Dimensiones</span>
+          <span class="value" id="obraModalSize">—</span>
+        </div>
+        <div class="obra-modal-meta-row">
+          <span class="label">Año</span>
+          <span class="value" id="obraModalYear2">—</span>
+        </div>
+        <div class="obra-modal-meta-row">
+          <span class="label">Edición</span>
+          <span class="value">Pieza única</span>
+        </div>
+      </div>
+      <div class="obra-modal-desc" id="obraModalDesc"></div>
+      <div class="obra-modal-actions">
+        <span class="obra-modal-price" id="obraModalPrice">—</span>
+        <a class="btn btn-primary" id="obraModalCta" href="#">
+          <span>Consultar por WhatsApp</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="/cdn-cgi/l/email-protection#5d3c33392f382e1d313c2e3e282f3c3433732e2928393432">
+          <span>Escribir email</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+async function getInfo() {
+  return {
+    "artista": {
+      "nombre": "Andrés Lascuráin",
+      "titulo": "Pintura al óleo",
+      "ciudad": "Guadalajara",
+      "pais": "México",
+      "periodo": "2007 — 2026"
+    },
+    "nav": {
+      "links": [
+        { "texto": "Obra",        "href": "#obra" },
+        { "texto": "Sobre mí",    "href": "#sobre" },
+        { "texto": "Trayectoria", "href": "#trayectoria" },
+        { "texto": "Contacto",    "href": "#contacto" }
+      ]
+    },
+    "hero": {
+      "etiqueta": "Pintura al óleo · Figurativo contemporáneo",
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1600&q=80&auto=format",
+        "alt": "Pintura al óleo de Andrés Lascuráin",
+        "caption": "Estudio · Tlaquepaque · 2025"
+      }
+    },
+    "sobre": {
+      "imagen": {
+        "src": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=1200&q=80&auto=format",
+        "alt": "Andrés Lascuráin en su estudio"
+      },
+      "bio": [
+        "Nací en Guadalajara en 1986. Pinto todos los días desde los diecisiete, casi siempre por las tardes, cuando entra la luz que me importa.",
+        "Mi obra parte del retrato — la cara como territorio — pero siempre termina mezclada con luz, ventana, y algo que se está yendo. No me interesa la copia: me interesa lo que queda después de mirar.",
+        "Aprendí a pintar con mi tío Esteban, que pintaba caballos en un taller con piso de tierra. Estudié en La Esmeralda. Lo que sé, sin embargo, lo aprendí en Tlaquepaque."
+      ]
+    },
+    "declaracion": {
+      "cita": "Pinto para no olvidar la luz que entra por la cocina a las cinco de la tarde. Cada cuadro es una hora del día que no quiero perder.",
+      "foto": {
+        "src": "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=900&q=80&auto=format",
+        "alt": "Andrés Lascuráin"
+      }
+    },
+    "obras": [
+      {
+        "titulo": "Mediodía en el patio",
+        "tecnica": "Óleo sobre lino",
+        "dimensiones": "120 × 90 cm",
+        "año": 2024,
+        "precio": "$48,000 MXN",
+        "vendida": false,
+        "descripcion": "Pintado durante el verano de 2024 en el taller de Tlaquepaque. La luz que entra entre las dos paredes blancas es lo que me interesa — no la jardinera, no las macetas. El cuadro es del aire.\n\nLo terminé en cuatro sesiones, todas entre las dos y las cinco de la tarde.\n\nÓleo sobre lino preparado a mano. Marco de cedro disponible aparte.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=1400&q=80&auto=format", "alt": "Mediodía en el patio" }
+      },
+      {
+        "titulo": "Retrato de Camila",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "60 × 50 cm",
+        "año": 2024,
+        "precio": "$22,000 MXN",
+        "vendida": false,
+        "descripcion": "Camila es mi sobrina. Posó tres tardes seguidas mirando el mismo libro. No es un retrato de ella exactamente — es el retrato de cómo ella habita una silla.\n\nÓleo sobre tela. Capa fina, sin imprimación blanca, dejando el tono crudo del lienzo respirando entre los pasajes oscuros.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=1100&q=80&auto=format", "alt": "Retrato de Camila" }
+      },
+      {
+        "titulo": "Naranjas",
+        "tecnica": "Óleo sobre madera",
+        "dimensiones": "30 × 40 cm",
+        "año": 2023,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Naturaleza muerta hecha en una sola sesión. Las naranjas estaban sobre un mantel verde de mi abuela. Pinté primero el verde, luego las dejé caer encima. El verde sigue ahí abajo.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1100&q=80&auto=format", "alt": "Naranjas" }
+      },
+      {
+        "titulo": "La ventana de Esteban",
+        "tecnica": "Óleo sobre lino",
+        "dimensiones": "80 × 60 cm",
+        "año": 2023,
+        "precio": "$28,000 MXN",
+        "vendida": false,
+        "descripcion": "En la casa de mi tío, en Tlaquepaque, hay una ventana que da al patio interior. La pinté durante una semana entera, viendo cómo la luz pasaba de la izquierda a la derecha entre las nueve de la mañana y la una.\n\nEs un homenaje al taller donde aprendí a pintar.\n\nÓleo sobre lino. Una de las piezas más personales de la serie.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1100&q=80&auto=format", "alt": "La ventana de Esteban" }
+      },
+      {
+        "titulo": "Domingo",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "50 × 40 cm",
+        "año": 2024,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Mi cocina, en domingo, después del desayuno. Las tazas todavía calientes. No es virtuosismo — es atención.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1100&q=80&auto=format", "alt": "Domingo" }
+      },
+      {
+        "titulo": "Estudio para retrato",
+        "tecnica": "Óleo sobre papel",
+        "dimensiones": "35 × 25 cm",
+        "año": 2024,
+        "precio": "$9,500 MXN",
+        "vendida": false,
+        "descripcion": "Boceto al óleo sobre papel preparado. Hecho como ejercicio para una pieza mayor que nunca llegué a empezar. Lo guardé porque algo en la mirada se sostiene.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1100&q=80&auto=format", "alt": "Estudio para retrato" }
+      },
+      {
+        "titulo": "Reflejo",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "40 × 40 cm",
+        "año": 2024,
+        "precio": "$14,000 MXN",
+        "vendida": false,
+        "descripcion": "Autorretrato visto en un espejo redondo del baño. Cuadrado, frontal, sin más artificio. Una pieza honesta — quizá demasiado honesta. Pintada en una tarde.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=1100&q=80&auto=format", "alt": "Reflejo" }
+      },
+      {
+        "titulo": "Tarde de mayo",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "70 × 100 cm",
+        "año": 2023,
+        "precio": "$32,000 MXN",
+        "vendida": false,
+        "descripcion": "El cuadro más grande de la serie. Pintado mirando al jardín en una tarde clara de mayo del 2023. Las flores que aparecen abajo son bugambilias en flor; arriba, el cielo de Guadalajara — ese azul que no es azul.\n\nQuería pintar la sensación de saber que va a llover sin que llueva todavía.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1551913902-c92207136625?w=1400&q=80&auto=format", "alt": "Tarde de mayo" }
+      },
+      {
+        "titulo": "Atardecer en el taller",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "50 × 60 cm",
+        "año": 2023,
+        "precio": "$18,000 MXN",
+        "vendida": false,
+        "descripcion": "Vista del taller a las siete de la tarde, en pleno noviembre. Las luces amarillas contra el azul del aire que entra por la puerta. Hay dos pinceles olvidados en primer plano que pinté tal como estaban.",
+        "imagen": null
+      },
+      {
+        "titulo": "Lupita",
+        "tecnica": "Óleo sobre madera",
+        "dimensiones": "40 × 30 cm",
+        "año": 2023,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Lupita ha hecho la limpieza en la casa por más de quince años. Le pedí posar una sola tarde. Aceptó, pero no quiso dejar el delantal puesto.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1578321272125-4e4c4c3643c5?w=1200&q=80&auto=format", "alt": "Lupita" }
+      },
+      {
+        "titulo": "Tazas",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "25 × 35 cm",
+        "año": 2023,
+        "precio": "$7,500 MXN",
+        "vendida": false,
+        "descripcion": "Estudio de naturaleza muerta. Tres tazas de la casa de mi abuela, distintas entre sí. Lo pinté en un día.",
+        "imagen": null
+      },
+      {
+        "titulo": "Patio temprano",
+        "tecnica": "Óleo sobre lino",
+        "dimensiones": "80 × 100 cm",
+        "año": 2022,
+        "precio": "$42,000 MXN",
+        "vendida": false,
+        "descripcion": "El patio de la casa, a las seis y media de la mañana. El gato sigue dormido en la esquina derecha. Pintura grande para ser tan callada.",
+        "imagen": null
+      },
+      {
+        "titulo": "Mi madre, leyendo",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "60 × 80 cm",
+        "año": 2022,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Mi madre lee todas las tardes en el mismo sillón. Una pieza que terminé el día antes de que se enfermara. No la veo igual desde entonces.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=1200&q=80&auto=format", "alt": "Mi madre, leyendo" }
+      },
+      {
+        "titulo": "Jardín al fondo",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "40 × 50 cm",
+        "año": 2022,
+        "precio": "$15,000 MXN",
+        "vendida": false,
+        "descripcion": "Vista al jardín desde la cocina. El recipiente azul de la izquierda es de mi suegra.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1200&q=80&auto=format", "alt": "Jardín al fondo" }
+      },
+      {
+        "titulo": "Sin título, agosto",
+        "tecnica": "Óleo sobre papel",
+        "dimensiones": "30 × 40 cm",
+        "año": 2022,
+        "precio": "$9,500 MXN",
+        "vendida": false,
+        "descripcion": "Pieza experimental. Pinté sin planificar, partiendo de una mancha de color. No supe ponerle nombre.",
+        "imagen": null
+      },
+      {
+        "titulo": "Manzanas, II",
+        "tecnica": "Óleo sobre madera",
+        "dimensiones": "25 × 35 cm",
+        "año": 2022,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Segunda versión de un tema que pinté en 2019. Mismas manzanas, otro año, otra luz.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200&q=80&auto=format", "alt": "Manzanas, II" }
+      },
+      {
+        "titulo": "Retrato de Tomás",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "50 × 40 cm",
+        "año": 2021,
+        "precio": "$15,000 MXN",
+        "vendida": false,
+        "descripcion": "Tomás es músico. Posó con su violín pero al final pinté solo la cara y las manos.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=1200&q=80&auto=format", "alt": "Retrato de Tomás" }
+      },
+      {
+        "titulo": "Cuarto de la abuela",
+        "tecnica": "Óleo sobre lino",
+        "dimensiones": "70 × 90 cm",
+        "año": 2021,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "El cuarto de mi abuela tal como quedó dos meses después de que ella muriera. La cama tendida, las cortinas abiertas. No volví a pintarlo.",
+        "imagen": null
+      },
+      {
+        "titulo": "Limones",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "30 × 30 cm",
+        "año": 2021,
+        "precio": "$8,500 MXN",
+        "vendida": false,
+        "descripcion": "Cuatro limones sobre un trapo verde. Ejercicio. Me gusta el reflejo amarillo en el cuchillo de fondo.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80&auto=format", "alt": "Limones" }
+      },
+      {
+        "titulo": "Estudio para mediodía",
+        "tecnica": "Óleo sobre papel",
+        "dimensiones": "35 × 45 cm",
+        "año": 2020,
+        "precio": "$11,000 MXN",
+        "vendida": false,
+        "descripcion": "Boceto preparatorio para una pieza más grande nunca terminada. Conservé este por la calidad de la luz central.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=1200&q=80&auto=format", "alt": "Estudio para mediodía" }
+      },
+      {
+        "titulo": "La mesa",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "60 × 80 cm",
+        "año": 2020,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Pintada después de una comida familiar larga. Lo que queda en la mesa cuando todos se fueron.",
+        "imagen": null
+      },
+      {
+        "titulo": "Lluvia en Tlaquepaque",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "50 × 70 cm",
+        "año": 2019,
+        "precio": "$24,000 MXN",
+        "vendida": false,
+        "descripcion": "Vista desde la ventana del taller, durante un aguacero de septiembre. El agua corre por la teja y se acumula en el patio.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=1200&q=80&auto=format", "alt": "Lluvia en Tlaquepaque" }
+      },
+      {
+        "titulo": "Autorretrato, 32",
+        "tecnica": "Óleo sobre tela",
+        "dimensiones": "40 × 50 cm",
+        "año": 2018,
+        "precio": null,
+        "vendida": true,
+        "descripcion": "Hecho cuando cumplí 32 años. No me gustó al terminarlo, pero lo dejé colgado un mes y aprendí a no juzgarlo.",
+        "imagen": { "src": "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1200&q=80&auto=format", "alt": "Autorretrato, 32" }
+      },
+      {
+        "titulo": "Tarde gris",
+        "tecnica": "Óleo sobre papel",
+        "dimensiones": "30 × 40 cm",
+        "año": 2018,
+        "precio": "$9,500 MXN",
+        "vendida": false,
+        "descripcion": "Cielo encapotado sobre los techos del centro de Tlaquepaque. Tres edificios, sin gente. Hecho casi a propósito sin protagonista.",
+        "imagen": null
+      }
+    ],
+    "cv": {
+      "exposiciones_individuales": [
+        { "año": 2025, "titulo": "Hora de la luz", "lugar": "Galería Curro · Guadalajara" },
+        { "año": 2023, "titulo": "Patios",          "lugar": "Museo Raúl Anguiano · Guadalajara" },
+        { "año": 2021, "titulo": "Familias",        "lugar": "Casa Estudio Diego Rivera · Ciudad de México" }
+      ],
+      "exposiciones_colectivas": [
+        { "año": 2024, "titulo": "Feria Material",        "lugar": "Ciudad de México" },
+        { "año": 2024, "titulo": "Salón ACME · ed. 12",   "lugar": "Ciudad de México" },
+        { "año": 2022, "titulo": "Bienal Tamayo",         "lugar": "Jóvenes pintores" },
+        { "año": 2020, "titulo": "Retrato Contemporáneo", "lugar": "Museo de Arte de Zapopan" }
+      ],
+      "reconocimientos": [
+        { "año": 2023, "titulo": "Premio Bancomer",  "institucion": "Estímulo a la pintura" },
+        { "año": 2021, "titulo": "Residencia FONCA", "institucion": "Jóvenes Creadores" },
+        { "año": 2018, "titulo": "Mención de honor", "institucion": "Premio Diego Rivera" }
+      ],
+      "formacion": [
+        { "periodo": "2010", "titulo": "Licenciatura en Artes Visuales", "institucion": "La Esmeralda · ENPEG · CDMX" },
+        { "periodo": "2008", "titulo": "Taller de Esteban Lascuráin",    "institucion": "Tlaquepaque, Jalisco" }
+      ]
+    },
+    "contacto": {
+      "pretitulo": "¿Te interesa una obra o quieres hacer una consulta? Respondo personalmente, casi siempre el mismo día.",
+      "llamada": "Escríbeme\ndirectamente.",
+      "email": "hola@andreslascurain.mx",
+      "redes": [
+        { "nombre": "WhatsApp",  "href": "https://wa.me/5233123456789",           "texto": "+52 33 1234 5678" },
+        { "nombre": "Instagram", "href": "https://instagram.com/andreslascurain", "texto": "@andreslascurain" },
+        { "nombre": "Facebook",  "href": "#",                                      "texto": "Andrés Lascuráin · Estudio" }
+      ],
+      "meta": [
+        { "label": "Estudio", "texto": "Tlaquepaque · Jalisco" },
+        { "label": "Envíos",  "texto": "Nacional e internacional · embalaje incluido" }
+      ]
+    },
+    "footer": {
+      "copyright": "© 2026 — Andrés Lascuráin"
+    }
+  };
+}
+
+function applyToDoc({ palette, type, theme, galleryLayout }) {
+  const root = document.documentElement;
+  root.setAttribute('data-palette', palette);
+  root.setAttribute('data-type', type);
+  root.setAttribute('data-theme', theme);
+  const bento = document.querySelector('.bento');
+  if (bento) bento.setAttribute('data-layout', galleryLayout || 'salon');
+  if (typeof window.__layoutSalonMasonry === 'function') {
+    setTimeout(window.__layoutSalonMasonry, 0);
+  }
+}
+
+const _savedTheme = localStorage.getItem('esa-theme');
+const _initTheme = _savedTheme === 'dark' || _savedTheme === 'light'
+  ? _savedTheme
+  : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+applyToDoc({ palette: 'tierra', type: 'editorial', theme: _initTheme, galleryLayout: 'salon' });
+
+renderFromInfo();
+
+</script>
+
+<script>
+  // ── THEME TOGGLE ────────────────────────────────────────────
+  const themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('esa-theme', next);
+    });
+  }
+
+  // simple intersection-observer reveal
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  // ============================================================
+  // SALÓN · MASONRY ESTABLE
+  // Distribuye las .obra en columnas usando "shortest column first".
+  // Las primeras N obras se quedan en su lugar al agregar más.
+  // ============================================================
+  const SALON_ASPECTS = ['3/4', '1/1', '4/5', '5/4', '2/3', '1/1'];
+
+  function layoutSalonMasonry() {
+    const bento = document.querySelector(".bento");
+    if (!bento) return;
+    const layout = bento.getAttribute("data-layout") || "bento";
+    const isSalon = layout === "salon" || layout === "salon-cedula";
+
+    // 1) Recover any cards that were inside .salon-col, restore DOM order
+    const orderedCards = [];
+    const allObra = [...bento.querySelectorAll(".obra")];
+    // Sort by data-order (stamped on first run) so original order is preserved
+    allObra.forEach((c, i) => {
+      if (!c.dataset.order) c.dataset.order = String(i);
+    });
+    allObra.sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
+    orderedCards.push(...allObra);
+
+    // Tear down any existing columns
+    bento.querySelectorAll(".salon-col").forEach(col => col.remove());
+
+    if (!isSalon) {
+      // Restore cards as direct children in original order, clear inline aspect overrides
+      orderedCards.forEach(c => {
+        c.style.aspectRatio = "";
+        const img = c.querySelector(".obra-img");
+        if (img) img.style.aspectRatio = "";
+        bento.appendChild(c);
+      });
+      return;
+    }
+
+    // 2) Determine column count by current bento width
+    const w = bento.clientWidth;
+    let cols = 2;
+    if (w >= 640) cols = 3;
+
+    // 3) Filter visible cards (respect archivo state)
+    const archivoOpen = bento.getAttribute("data-archivo") === "open";
+    const visible = orderedCards.filter(c => archivoOpen || !c.classList.contains("archive"));
+
+    // Detach all cards from bento (visible ones go in columns; hidden stay parked at end)
+    orderedCards.forEach(c => c.remove());
+
+    // 4) Create column wrappers
+    const colEls = [];
+    const heights = new Array(cols).fill(0);
+    for (let i = 0; i < cols; i++) {
+      const col = document.createElement("div");
+      col.className = "salon-col";
+      bento.appendChild(col);
+      colEls.push(col);
+    }
+
+    // 5) Assign aspect-ratio per card based on its original index in DOM order
+    visible.forEach((card, visIdx) => {
+      const origIdx = Number(card.dataset.order);
+      const aspect = SALON_ASPECTS[origIdx % SALON_ASPECTS.length];
+      if (layout === "salon-cedula") {
+        const img = card.querySelector(".obra-img");
+        if (img) img.style.aspectRatio = aspect;
+        card.style.aspectRatio = "";
+      } else {
+        card.style.aspectRatio = aspect;
+        const img = card.querySelector(".obra-img");
+        if (img) img.style.aspectRatio = "";
+      }
+
+      // Pick the shortest column (estimate from cumulative aspect-derived heights)
+      // ratio is W:H; height-per-unit-width = parts[1]/parts[0]
+      const [aw, ah] = aspect.split("/").map(Number);
+      const estUnits = ah / aw + (layout === "salon-cedula" ? 0.35 : 0); // caption adds ~35% per card
+      let pick = 0;
+      for (let i = 1; i < cols; i++) {
+        if (heights[i] < heights[pick]) pick = i;
+      }
+      colEls[pick].appendChild(card);
+      heights[pick] += estUnits;
+    });
+
+    // 6) Park hidden cards (archive when collapsed) at the end of the bento so they stay in DOM
+    const hidden = orderedCards.filter(c => !visible.includes(c));
+    hidden.forEach(c => {
+      c.style.aspectRatio = "";
+      const img = c.querySelector(".obra-img");
+      if (img) img.style.aspectRatio = "";
+      bento.appendChild(c);
+    });
+  }
+
+  // Expose globally so tweaks-app can trigger after layout change
+  window.__layoutSalonMasonry = layoutSalonMasonry;
+
+  // Initial run + on resize (debounced)
+  let salonResizeT;
+  window.addEventListener("resize", () => {
+    clearTimeout(salonResizeT);
+    salonResizeT = setTimeout(layoutSalonMasonry, 120);
+  });
+  // Defer first run a tick so layout attr from tweaks is applied first
+  setTimeout(layoutSalonMasonry, 0);
+
+  // ============================================================
+  // OBRA MODAL — opens on click; pulls data from the clicked .obra
+  // ============================================================
+  const modal = document.getElementById("obraModal");
+  const modalImg = document.getElementById("obraModalImg");
+  const modalTitle = document.getElementById("obraModalTitle");
+  const modalTech = document.getElementById("obraModalTech");
+  const modalSize = document.getElementById("obraModalSize");
+  const modalYear = document.getElementById("obraModalYear");
+  const modalYear2 = document.getElementById("obraModalYear2");
+  const modalDesc = document.getElementById("obraModalDesc");
+  const modalPrice = document.getElementById("obraModalPrice");
+  const modalCta = document.getElementById("obraModalCta");
+  const modalSelloWrap = document.getElementById("obraModalSelloWrap");
+  const modalPrev = document.getElementById("obraModalPrev");
+  const modalNext = document.getElementById("obraModalNext");
+  const modalCounter = document.getElementById("obraModalCounter");
+
+  // Track current obra and the list at time of opening
+  let currentObraList = [];
+  let currentObraIndex = -1;
+
+  function visibleObras() {
+    // Modal navigation walks ALL obras (including archive) regardless of
+    // whether "Ver más" is currently expanded — opening a card gives access
+    // to the full body of work.
+    const bento = document.querySelector(".bento");
+    if (!bento) return [];
+    const all = [...bento.querySelectorAll(".obra")];
+    all.sort((a, b) => Number(a.dataset.order || 0) - Number(b.dataset.order || 0));
+    return all;
+  }
+
+  function refreshCounter() {
+    if (!modalCounter) return;
+    if (currentObraIndex < 0 || !currentObraList.length) {
+      modalCounter.textContent = "";
+      return;
+    }
+    modalCounter.textContent = `${currentObraIndex + 1} / ${currentObraList.length}`;
+  }
+
+  function navigateObra(dir) {
+    if (!currentObraList.length) return;
+    const next = (currentObraIndex + dir + currentObraList.length) % currentObraList.length;
+    currentObraIndex = next;
+    openObraModal(currentObraList[next], { skipListRefresh: true });
+  }
+
+  function openObraModal(obra, opts = {}) {
+    if (!obra) return;
+    // Refresh navigation list & current index
+    if (!opts.skipListRefresh) {
+      currentObraList = visibleObras();
+    }
+    currentObraIndex = currentObraList.indexOf(obra);
+    refreshCounter();
+
+    const titleEl = obra.querySelector(".obra-title em") || obra.querySelector(".obra-title");
+    const title = (titleEl?.textContent || "").trim();
+    const metaSpans = [...obra.querySelectorAll(".obra-meta > span")].filter(s => !s.classList.contains("sep"));
+    const tech = metaSpans[0]?.textContent.trim() || "—";
+    const size = metaSpans[1]?.textContent.trim() || "—";
+    const year = metaSpans[2]?.textContent.trim() || "—";
+    const priceEl = obra.querySelector(".obra-price");
+    const isSold = obra.querySelector(".sello.vendida") !== null;
+    const price = isSold ? "Vendida" : (priceEl?.textContent.trim() || "Consultar precio");
+    const imgEl = obra.querySelector(".obra-img img");
+    const imgSrc = imgEl?.getAttribute("src") || null;
+    const isPlaceholder = obra.querySelector(".obra-img")?.classList.contains("ph") || !imgSrc;
+    const desc = (obra.getAttribute("data-desc") || "").replace(/\\n/g, "\n");
+    const label = obra.querySelector(".obra-img")?.getAttribute("data-label") || "";
+
+    modalTitle.innerHTML = `<em></em>`;
+    modalTitle.firstChild.textContent = title;
+    modalTech.textContent = tech;
+    modalSize.textContent = size;
+    modalYear.textContent = year;
+    modalYear2.textContent = year;
+    modalPrice.textContent = price;
+    modalPrice.classList.toggle("sold", isSold);
+    const _wa = window.__waBase;
+    const _em = window.__emailBase;
+    if (_wa) {
+      modalCta.setAttribute("href", isSold
+        ? `${_wa}?text=${encodeURIComponent(`Hola, me gustaría ver obra similar a "${title}"`)}`
+        : `${_wa}?text=${encodeURIComponent(`Hola, me interesa la obra "${title}"`)}`);
+      modalCta.querySelector("span").textContent = isSold ? "Pedir obra similar" : "Consultar por WhatsApp";
+    } else {
+      modalCta.setAttribute("href", _em || '#');
+      modalCta.querySelector("span").textContent = isSold ? "Pedir obra similar" : "Escribir email";
+    }
+
+    modalSelloWrap.innerHTML = isSold
+      ? `<span class="obra-modal-sello vendida"><span class="dotcir"></span> Vendida</span>`
+      : `<span class="obra-modal-sello"><span class="dotcir"></span> Disponible</span>`;
+
+    if (desc) {
+      const paras = desc.split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, '<br/>')}</p>`).join("");
+      modalDesc.innerHTML = paras;
+    } else {
+      modalDesc.innerHTML = "";
+    }
+
+    modalImg.classList.toggle("ph", isPlaceholder);
+    modalImg.setAttribute("data-label", label);
+    modalImg.innerHTML = isPlaceholder ? "" : `<img src="${imgSrc}" alt="${title}" />`;
+
+    modal.removeAttribute("hidden");
+    modal.setAttribute("data-open", "true");
+    document.documentElement.classList.add("modal-open");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeObraModal() {
+    modal.removeAttribute("data-open");
+    modal.setAttribute("hidden", "");
+    document.documentElement.classList.remove("modal-open");
+    document.body.classList.remove("modal-open");
+  }
+
+  // Delegated click on the bento — open modal (intercepting the inline CTA)
+  document.addEventListener("click", (ev) => {
+    const obra = ev.target.closest(".bento .obra");
+    if (!obra) return;
+    const cta = ev.target.closest(".obra-cta");
+    if (cta) ev.preventDefault();
+    openObraModal(obra);
+  });
+
+  modal?.addEventListener("click", (ev) => {
+    if (ev.target.closest("[data-close]")) closeObraModal();
+  });
+  modalPrev?.addEventListener("click", () => navigateObra(-1));
+  modalNext?.addEventListener("click", () => navigateObra(1));
+  document.addEventListener("keydown", (ev) => {
+    if (modal?.getAttribute("data-open") !== "true") return;
+    if (ev.key === "Escape") closeObraModal();
+    else if (ev.key === "ArrowLeft") navigateObra(-1);
+    else if (ev.key === "ArrowRight") navigateObra(1);
+  });
+
+  const archivoBtn = document.getElementById("archivoToggle");
+  const bento = document.querySelector(".bento");
+  if (archivoBtn && bento) {
+    archivoBtn.addEventListener("click", () => {
+      const expanded = archivoBtn.getAttribute("aria-expanded") === "true";
+      if (expanded) {
+        bento.removeAttribute("data-archivo");
+        archivoBtn.setAttribute("aria-expanded", "false");
+        archivoBtn.querySelector(".ver-mas-label").textContent = "Ver más obras";
+        // scroll back to the button so the user keeps reference
+        const y = archivoBtn.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      } else {
+        bento.setAttribute("data-archivo", "open");
+        archivoBtn.setAttribute("aria-expanded", "true");
+        archivoBtn.querySelector(".ver-mas-label").textContent = "Mostrar menos";
+      }
+      // re-pack salón if active
+      window.__layoutSalonMasonry?.();
+    });
+  }
+
+  // smooth scroll for anchor links (with sticky nav offset)
+  document.addEventListener("click", (ev) => {
+    const a = ev.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href").slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    ev.preventDefault();
+    const y = target.getBoundingClientRect().top + window.scrollY - 56;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  });
+</script>
+
+
+<script>
+// ============================================================
+// renderFromInfo — popula el DOM desde getInfo()
+// Se define aquí (script plano, corre durante parseo) pero la
+// llama el bloque Babel cuando getInfo() ya está disponible.
+// ============================================================
+async function renderFromInfo() {
+  let data;
+  try { data = await getInfo(); } catch (e) { console.error('[renderFromInfo] getInfo falló:', e); return; }
+
+  const arrowSvg = `<svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M9 4l4 4-4 4"/></svg>`;
+
+  // Resolución de links de contacto
+  const waRed   = data.contacto.redes.find(r => r.nombre === 'WhatsApp');
+  const waHref  = (waRed?.href && waRed.href !== '#') ? waRed.href : null;
+  const emailHref = `mailto:${data.contacto.email}`;
+  window.__waBase    = waHref;
+  window.__emailBase = emailHref;
+
+  // ── Meta ──────────────────────────────────────────────────
+  document.title = `${data.artista.nombre} — ${data.artista.titulo}`;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.content = `${data.artista.titulo}. Obra disponible y contacto directo.`;
+
+  // ── Nav ───────────────────────────────────────────────────
+  const navMark = document.querySelector('.nav-mark');
+  if (navMark) navMark.innerHTML = `<em>${data.artista.nombre}</em>`;
+
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navLinksEl) navLinksEl.innerHTML = data.nav.links.map(l =>
+    `<a href="${l.href}">${l.texto}</a>`).join('');
+
+  const navCta = document.querySelector('.nav-cta');
+  if (navCta) {
+    navCta.href = waHref || emailHref;
+    navCta.innerHTML = `${waHref ? 'WhatsApp' : 'Email'} ${arrowSvg}`;
+  }
+
+  // ── Hero ──────────────────────────────────────────────────
+  const heroImgEl = document.querySelector('.hero-bg .img-slot img');
+  if (heroImgEl && data.hero.imagen) {
+    heroImgEl.src = data.hero.imagen.src;
+    heroImgEl.alt = data.hero.imagen.alt;
+  }
+
+  const heroCorners = document.querySelectorAll('.hero-corner');
+  if (heroCorners[0]) heroCorners[0].innerHTML =
+    `<span class="pin"></span> ${data.artista.ciudad} · ${data.artista.pais}`;
+  if (heroCorners[1] && data.artista.periodo) heroCorners[1].textContent = data.artista.periodo;
+
+  const heroTag = document.querySelector('.hero-tag');
+  if (heroTag) {
+    const parts = data.hero.etiqueta.split('·').map(p => p.trim());
+    heroTag.innerHTML = parts.map((p, i) =>
+      i < parts.length - 1 ? `<span>${p}</span><span class="dot"></span>` : `<span>${p}</span>`
+    ).join('');
+  }
+
+  const heroName = document.querySelector('.hero-name');
+  if (heroName) {
+    const [first, ...rest] = data.artista.nombre.split(' ');
+    heroName.innerHTML = `<em>${first}</em><br/>${rest.join(' ')}`;
+  }
+
+  const heroGhost = document.querySelector('.hero .btn-ghost');
+  if (heroGhost) heroGhost.href = waHref || emailHref;
+
+  // ── Sobre ─────────────────────────────────────────────────
+  const aboutPhoto = document.querySelector('.about-photo img');
+  if (aboutPhoto && data.sobre.imagen) {
+    aboutPhoto.src = data.sobre.imagen.src;
+    aboutPhoto.alt = data.sobre.imagen.alt;
+  }
+
+  const aboutCaption = document.querySelector('.about-caption');
+  if (aboutCaption && data.hero.imagen?.caption) aboutCaption.textContent = data.hero.imagen.caption;
+
+  const aboutText = document.querySelector('.about-text');
+  if (aboutText && data.sobre?.bio) aboutText.innerHTML = data.sobre.bio.map(p => `<p>${p}</p>`).join('');
+
+  // ── Declaración ───────────────────────────────────────────
+  if (data.declaracion) {
+    const quoteEl = document.querySelector('.quote');
+    if (quoteEl) quoteEl.innerHTML =
+      `<span class="mark">"</span>${data.declaracion.cita}<span class="mark">"</span>
+       <div class="quote-sign"><span class="rule"></span>${data.artista.nombre} · 2025</div>`;
+
+    const quotePhotoImg = document.querySelector('.quote-photo img');
+    const quoteFoto = data.declaracion.foto || data.sobre.imagen;
+    if (quotePhotoImg && quoteFoto) {
+      quotePhotoImg.src = quoteFoto.src;
+      quotePhotoImg.alt = quoteFoto.alt || data.artista.nombre;
+    }
+  }
+
+  // ── Obras ─────────────────────────────────────────────────
+  const OBRAS_VISIBLE = 8;
+  const bentoEl = document.querySelector('.bento');
+  if (bentoEl && data.obras?.length) {
+    const layoutClasses = ['anchor', '', 'wide', '', 'tall', ''];
+    bentoEl.innerHTML = data.obras.map((obra, i) => {
+      const lc        = layoutClasses[i % layoutClasses.length];
+      const isArchive = i >= OBRAS_VISIBLE;
+      const classes   = ['obra', lc, isArchive ? 'archive' : ''].filter(Boolean).join(' ');
+      const desc      = (obra.descripcion || '').replace(/"/g, '&quot;');
+
+      const sello = obra.vendida
+        ? `<span class="sello vendida">Vendida</span>`
+        : `<span class="sello"><span class="dotcir"></span> Disponible</span>`;
+
+      const priceEl = obra.vendida
+        ? `<span class="obra-price" style="opacity:.6">— vendida</span>`
+        : `<span class="obra-price">${obra.precio}</span>`;
+
+      const ctaHref = obra.vendida
+        ? (waHref ? `${waHref}?text=${encodeURIComponent(`Hola, me gustaría ver obra similar a "${obra.titulo}"`)}` : emailHref)
+        : (waHref ? `${waHref}?text=${encodeURIComponent(`Hola, me interesa la obra "${obra.titulo}"`)}` : emailHref);
+      const ctaLabel = obra.vendida ? 'Pedir similar' : 'Me interesa';
+
+      const imgEl = obra.imagen
+        ? `<div class="obra-img img-slot" data-label="${obra.tecnica} · ${obra.dimensiones}">
+             <img src="${obra.imagen.src}" alt="${obra.imagen.alt}" onerror="this.parentElement.classList.add('ph'); this.remove();">
+           </div>`
+        : `<div class="obra-img ph" data-label="${obra.tecnica} · ${obra.dimensiones}"></div>`;
+
+      return `
+        <article class="${classes}" data-desc="${desc}">
+          ${imgEl}
+          ${sello}
+          <div class="obra-shade"></div>
+          <div class="obra-info">
+            <h3 class="obra-title"><em>${obra.titulo}</em></h3>
+            <div class="obra-meta">
+              <span>${obra.tecnica}</span><span class="sep">·</span>
+              <span>${obra.dimensiones}</span><span class="sep">·</span>
+              <span>${obra.año}</span>
+            </div>
+            <div class="obra-bottom">
+              ${priceEl}
+              <a class="obra-cta" href="${ctaHref}">
+                <span class="full">${ctaLabel}</span>${arrowSvg}
+              </a>
+            </div>
+          </div>
+        </article>`;
+    }).join('\n');
+
+    // Mostrar "Ver más" solo si hay obras con clase .archive
+    const verMasRow = document.querySelector('.ver-mas-row');
+    if (verMasRow) {
+      const archiveCount = bentoEl.querySelectorAll('.obra.archive').length;
+      verMasRow.hidden = archiveCount === 0;
+    }
+
+    // Estampar data-order en las nuevas tarjetas
+    [...bentoEl.querySelectorAll('.obra')].forEach((el, i) => { el.dataset.order = String(i); });
+
+    // Relanzar masonry tras un tick (para que el layout del tweaks ya esté aplicado)
+    setTimeout(() => window.__layoutSalonMasonry?.(), 50);
+  }
+
+  // ── CV ────────────────────────────────────────────────────
+  const cvEl = document.querySelector('.cv');
+  if (cvEl && data.cv) {
+    function cvRows(items) {
+      return items.map(item => `
+        <li>
+          <span class="year">${item.año ?? item.periodo}</span>
+          <div>
+            <span class="title-item">${item.titulo}</span>
+            <span class="where">${item.lugar ?? item.institucion}</span>
+          </div>
+        </li>`).join('');
+    }
+    cvEl.innerHTML = `
+      <div class="cv-block"><h4>Exposiciones individuales</h4>
+        <ul class="cv-list">${cvRows(data.cv.exposiciones_individuales)}</ul></div>
+      <div class="cv-block"><h4>Exposiciones colectivas</h4>
+        <ul class="cv-list">${cvRows(data.cv.exposiciones_colectivas)}</ul></div>
+      <div class="cv-block"><h4>Reconocimientos</h4>
+        <ul class="cv-list">${cvRows(data.cv.reconocimientos)}</ul></div>
+      <div class="cv-block"><h4>Formación</h4>
+        <ul class="cv-list">${cvRows(data.cv.formacion)}</ul></div>`;
+  }
+
+  // ── Contacto ──────────────────────────────────────────────
+  const contactDisplay = document.querySelector('.contact-display');
+  if (contactDisplay) {
+    const parts = data.contacto.llamada.split('\n');
+    contactDisplay.innerHTML = parts.length > 1
+      ? `<em>${parts[0]}</em><br/>${parts.slice(1).join(' ')}`
+      : `<em>${parts[0]}</em>`;
+  }
+
+  const contactInvite = document.querySelector('.contact-invite');
+  if (contactInvite) contactInvite.textContent = data.contacto.pretitulo;
+
+  const contactActions = document.querySelector('.contact-actions');
+  if (contactActions) {
+    const waBtn = waHref
+      ? `<a class="btn btn-primary btn-big" href="${waHref}">WhatsApp ${arrowSvg}</a>`
+      : '';
+    contactActions.innerHTML = waBtn +
+      `<a class="btn btn-ghost btn-big" href="${emailHref}">${data.contacto.email} ${arrowSvg}</a>`;
+  }
+
+  const contactMeta = document.querySelector('.contact-meta');
+  if (contactMeta) {
+    const redesRows = data.contacto.redes.map(r => `
+      <div class="contact-row">
+        <span class="label">${r.nombre}</span>
+        <a href="${r.href}">${r.texto || r.nombre}</a>
+      </div>`).join('');
+    const emailRow = `
+      <div class="contact-row">
+        <span class="label">Email</span>
+        <a href="${emailHref}">${data.contacto.email}</a>
+      </div>`;
+    const metaRows = (data.contacto.meta || []).map(m => `
+      <div class="contact-row">
+        <span class="label">${m.label}</span>
+        <span>${m.texto}</span>
+      </div>`).join('');
+    contactMeta.innerHTML = redesRows + emailRow + metaRows;
+  }
+
+  // Modal: actualizar botón de email
+  const modalEmailBtn = document.querySelector('#obraModal .obra-modal-actions .btn-ghost');
+  if (modalEmailBtn) modalEmailBtn.href = emailHref;
+
+  // ── Footer ────────────────────────────────────────────────
+  const footEl = document.querySelector('.foot');
+  if (footEl) footEl.innerHTML = `
+    <div>${data.footer.copyright}</div>
+    <div>Hecho por <span class="esa">El Salón del Arte</span></div>`;
+
+  // Revelar la página solo cuando el contenido ya está listo
+  document.body.style.visibility = '';
+
+}
+</script>
+
+</body>
+</html>
