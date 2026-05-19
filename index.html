@@ -8,18 +8,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
 /* ================================================================
    ESA · Landing artista — sistema base
    Mobile-first. Editorial, cálido, papel + tinta.
    ================================================================ */
-
-/* ---- TYPE COMBOS ---- */
-/* A · Editorial (default): Instrument Serif + Manrope */
-/* B · Neutra: Geist (sans only) */
-/* C · Mixto: Bricolage Grotesque display + Newsreader body */
 
 :root {
   /* paleta Tierra (default) */
@@ -40,41 +35,6 @@
   --display-italic-style: italic;
 }
 
-[data-palette="galeria"] {
-  --paper: #f7f5ef;
-  --paper-2: #eeeae0;
-  --ink: #14130f;
-  --ink-soft: #4f4b41;
-  --rule: #d6d0c2;
-  --accent: #3f3a78;
-  --accent-ink: #f7f5ef;
-  --signal-ok: #3f3a78;
-  --signal-stop: #6e2a2a;
-}
-
-[data-palette="atelier"] {
-  --paper: #ebe5d8;
-  --paper-2: #e0d8c4;
-  --ink: #1f1a14;
-  --ink-soft: #61554a;
-  --rule: #c3b69f;
-  --accent: #b8401d;
-  --accent-ink: #f6f0e2;
-  --signal-ok: #4a6b3a;
-  --signal-stop: #b8401d;
-}
-
-[data-palette="monocromo"] {
-  --paper: #ededeb;
-  --paper-2: #dededb;
-  --ink: #121211;
-  --ink-soft: #5a5a55;
-  --rule: #c6c6c0;
-  --accent: #121211;
-  --accent-ink: #ededeb;
-  --signal-ok: #4a4a44;
-  --signal-stop: #6b2c1f;
-}
 
 [data-theme="dark"] {
   --paper: #161312;
@@ -84,31 +44,6 @@
   --rule: #3a322a;
   --accent: #d27a4a;
   --accent-ink: #14110f;
-}
-[data-theme="dark"][data-palette="galeria"] {
-  --paper: #100f12;
-  --paper-2: #18171c;
-  --ink: #ecead8;
-  --ink-soft: #9c9a8b;
-  --rule: #2e2c36;
-  --accent: #b9b1ff;
-}
-[data-theme="dark"][data-palette="atelier"] {
-  --paper: #15110d;
-  --paper-2: #1d1813;
-  --ink: #efe2c8;
-  --ink-soft: #aa9a7d;
-  --rule: #3a2f22;
-  --accent: #e26a3d;
-}
-[data-theme="dark"][data-palette="monocromo"] {
-  --paper: #131312;
-  --paper-2: #1b1b19;
-  --ink: #ededeb;
-  --ink-soft: #9d9d97;
-  --rule: #34342f;
-  --accent: #ededeb;
-  --accent-ink: #131312;
 }
 
 /* ---- DARK MODE · OS PREFERENCE ---- */
@@ -123,43 +58,8 @@
     --accent: #d27a4a;
     --accent-ink: #14110f;
   }
-  :root:not([data-theme="light"])[data-palette="galeria"] {
-    --paper: #100f12;
-    --paper-2: #18171c;
-    --ink: #ecead8;
-    --ink-soft: #9c9a8b;
-    --rule: #2e2c36;
-    --accent: #b9b1ff;
-  }
-  :root:not([data-theme="light"])[data-palette="atelier"] {
-    --paper: #15110d;
-    --paper-2: #1d1813;
-    --ink: #efe2c8;
-    --ink-soft: #aa9a7d;
-    --rule: #3a2f22;
-    --accent: #e26a3d;
-  }
-  :root:not([data-theme="light"])[data-palette="monocromo"] {
-    --paper: #131312;
-    --paper-2: #1b1b19;
-    --ink: #ededeb;
-    --ink-soft: #9d9d97;
-    --rule: #34342f;
-    --accent: #ededeb;
-    --accent-ink: #131312;
-  }
 }
 
-[data-type="neutra"] {
-  --font-display: "Geist", -apple-system, system-ui, sans-serif;
-  --font-body: "Geist", -apple-system, system-ui, sans-serif;
-  --display-italic-style: normal;
-}
-[data-type="mixto"] {
-  --font-display: "Bricolage Grotesque", -apple-system, sans-serif;
-  --font-body: "Newsreader", Georgia, serif;
-  --display-italic-style: normal;
-}
 
 /* ---- RESET ---- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -184,8 +84,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   letter-spacing: -0.02em;
 }
 .display em, .display .it { font-style: var(--display-italic-style); }
-[data-type="neutra"] .display { letter-spacing: -0.035em; font-weight: 500; }
-[data-type="mixto"] .display { letter-spacing: -0.02em; font-weight: 500; }
 
 .eyebrow {
   font-family: var(--font-mono);
@@ -236,7 +134,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   line-height: 1;
   letter-spacing: -0.02em;
 }
-[data-type="neutra"] .section-head .title { font-style: normal; font-weight: 500; letter-spacing: -0.035em; }
 
 /* ---- NAV ---- */
 .nav {
@@ -261,7 +158,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   letter-spacing: -0.01em;
   line-height: 1;
 }
-[data-type="neutra"] .nav-mark { font-style: normal; font-weight: 600; letter-spacing: -0.03em; }
 .nav-links {
   display: none;
   gap: 22px;
@@ -303,6 +199,7 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
 .theme-toggle .icon-moon { display: block; }
 [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .sello { background: rgba(0,0,0,0.55); border: none; }
 
 /* ---- HERO ---- */
 .hero {
@@ -370,8 +267,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   margin-bottom: 18px;
   text-shadow: 0 1px 24px rgba(0,0,0,0.18);
 }
-[data-type="neutra"] .hero-name { font-style: normal; font-weight: 500; letter-spacing: -0.05em; }
-[data-type="mixto"] .hero-name { font-weight: 500; letter-spacing: -0.04em; }
 
 .hero-tag {
   display: inline-flex;
@@ -512,7 +407,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   color: var(--ink);
   text-wrap: pretty;
 }
-[data-type="neutra"] .quote { font-style: normal; font-weight: 400; letter-spacing: -0.03em; }
 .quote .mark {
   color: var(--accent);
   font-style: normal;
@@ -679,9 +573,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   font-weight: 400;
   letter-spacing: -0.01em;
 }
-[data-type="neutra"] .bento[data-layout="salon-cedula"] .obra .obra-title {
-  font-style: normal; font-weight: 500; letter-spacing: -0.03em;
-}
 .bento[data-layout="salon-cedula"] .obra .obra-info {
   position: static;
   padding: 12px 2px 0;
@@ -836,7 +727,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   letter-spacing: -0.015em;
   text-wrap: pretty;
 }
-[data-type="neutra"] .obra-title { font-style: normal; font-weight: 500; letter-spacing: -0.035em; }
 
 .obra-meta {
   font-family: var(--font-mono);
@@ -1185,9 +1075,6 @@ button { background: none; border: 0; font: inherit; color: inherit; cursor: poi
   letter-spacing: -0.02em;
   text-wrap: pretty;
 }
-[data-type="neutra"] .obra-modal-title {
-  font-style: normal; font-weight: 500; letter-spacing: -0.035em;
-}
 
 .obra-modal-meta {
   display: grid;
@@ -1367,7 +1254,6 @@ html.modal-open, body.modal-open { overflow: hidden; }
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
-[data-type="neutra"] .cv-list .title-item { font-style: normal; font-weight: 500; }
 
 @media (min-width: 768px) {
   .cv {
@@ -1392,7 +1278,6 @@ html.modal-open, body.modal-open { overflow: hidden; }
   text-wrap: balance;
   margin-bottom: 32px;
 }
-[data-type="neutra"] .contact-display { font-style: normal; font-weight: 500; letter-spacing: -0.045em; }
 .contact-invite {
   font-size: 17px;
   line-height: 1.5;
@@ -1448,7 +1333,8 @@ html.modal-open, body.modal-open { overflow: hidden; }
 
 /* ---- FOOTER ---- */
 .foot {
-  padding: 40px 0 56px;
+  padding-top: 40px;
+  padding-bottom: 56px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -1696,8 +1582,8 @@ async function getInfo() {
     },
     "nav": {
       "links": [
-        { "texto": "Obra",        "href": "#obra" },
         { "texto": "Sobre mí",    "href": "#sobre" },
+        { "texto": "Obra",        "href": "#obra" },
         { "texto": "Trayectoria", "href": "#trayectoria" },
         { "texto": "Contacto",    "href": "#contacto" }
       ]
@@ -2030,8 +1916,6 @@ const _initTheme = _savedTheme === 'dark' || _savedTheme === 'light'
   : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 applyToDoc({ palette: 'tierra', type: 'editorial', theme: _initTheme, galleryLayout: 'salon' });
-
-renderFromInfo();
 
 </script>
 
@@ -2579,6 +2463,8 @@ async function renderFromInfo() {
   document.body.style.visibility = '';
 
 }
+
+renderFromInfo();
 </script>
 
 </body>
